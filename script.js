@@ -257,7 +257,7 @@ window.addEventListener("load", () => {
     const WEAPON_H = 346 * WEAPON_SCALE_FACTOR; 
     // =================================================================
 
-    const PLAYER_BASE = { maxHp: 300, atk: 10, def: 2, speed: 2.3 };
+    const PLAYER_BASE = { maxHp: 300, atk: 12, def: 2, speed: 2.3 };
     const MONSTER_BASE_SPEED = 1.30;
     const PLAYER_ATTACK_RANGE = 120;
     const PLAYER_ATTACK_COOLDOWN = 220;
@@ -527,7 +527,7 @@ window.addEventListener("load", () => {
         upgradeMenu.appendChild(title);
 
         const upgrades = [
-            {text:"Aumentar ATK (+4)", type:"atk"},
+            {text:"Aumentar ATK (+6)", type:"atk"},
             {text:"Aumentar HP (+80)", type:"hp"},
             {text:"Aumentar DEF (+3)", type:"def"},
             {text:"Aumentar VEL (+0.30)", type:"spd"},
@@ -548,7 +548,7 @@ window.addEventListener("load", () => {
         // (Lógica de aplicação de upgrade omitida para brevidade, é a mesma)
         if(gameState !== "upgrade") return; 
         
-        if(type==="atk") player.atk+=4;
+        if(type==="atk") player.atk+=6;
         else if(type==="hp"){ player.maxHp+=80; player.hp=player.maxHp; }
         else if(type==="def") player.def+=3;
         else if(type==="spd") player.speed=Math.min(6,player.speed+0.30);
@@ -1533,4 +1533,5 @@ window.addEventListener("load", () => {
     setGameState("mainMenu"); 
     restartGame();
     animationFrameId = requestAnimationFrame(mainLoop);
+
 });
