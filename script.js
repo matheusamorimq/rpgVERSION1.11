@@ -1480,7 +1480,7 @@ window.addEventListener("load", () => {
             if (player.isKnockedBack) return; 
 
             if(key==="k" || key==="z") playerAttack(); 
-            if(key==="shift") playerDash();
+            if(key==="shift" || key===" ") playerDash();
             if(key==="p") setGameState("paused");
         } else if (gameState === "paused") {
             if(key==="p" || key==="escape") setGameState("running"); 
@@ -1535,3 +1535,4 @@ window.addEventListener("load", () => {
     animationFrameId = requestAnimationFrame(mainLoop);
 
 });
+
